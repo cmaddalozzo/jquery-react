@@ -11,10 +11,10 @@
       return (function(that) {
         // Fire on window resize.
         $(window).resize(function() {
-          var width = $(window).width();
+          var width = window.innerWidth;
           //Iterate through all of our breakpoints.
           for(var breakpoint in breakpoints){
-            if(width > breakpoints[breakpoint].range[0] && width < breakpoints[breakpoint].range[1]){
+            if(width >= breakpoints[breakpoint].range[0] && width <= breakpoints[breakpoint].range[1]){
               // Fire the callback function if we have reached a new breakpoint
               // or our current breakpoint is continuous.
               if((!breakpoints[breakpoint].active || false) || breakpoints[breakpoint].frequency == 'continuous'){
